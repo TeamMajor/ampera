@@ -5,4 +5,4 @@
 <link rel="stylesheet" href="http://localhost/ampera/style/responsive.datable.css" type="text/css" />
 <link rel="stylesheet" href="http://localhost/ampera/style/datepicker/bootstrap-datepicker.css" type="text/css" />
 <link rel="stylesheet" href="http://localhost/ampera/style/datepicker/bootstrap-datetimepicker.css" type="text/css" />
-
+<link rel="stylesheet" href="http://localhost/ampera/style/home.css" type="text/css" />

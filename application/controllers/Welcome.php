@@ -3,23 +3,35 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Welcome extends CI_Controller {
 
-	/**
-	 * Index Page for this controller.
-	 *
-	 * Maps to the following URL
-	 * 		http://example.com/index.php/welcome
-	 *	- or -
-	 * 		http://example.com/index.php/welcome/index
-	 *	- or -
-	 * Since this controller is set as the default controller in
-	 * config/routes.php, it's displayed at http://example.com/
-	 *
-	 * So any other public methods not prefixed with an underscore will
-	 * map to /index.php/welcome/<method_name>
-	 * @see https://codeigniter.com/user_guide/general/urls.html
-	 */
 	public function index()
 	{
-		$this->load->view('welcome_message');
+		$this->load->view('welcome');
+	}
+	
+	public function token(){
+		$data=$this->input->get("search");
+		$data1 = preg_replace('/\s+/', ' ', $data); 
+		$kalimat=strtolower($data1);
+		$data = array( 
+		'budaya'=> $this->M_data->kebudayaan()
+		);
+		//print_r($data['budaya']);
+    foreach($data['budaya'] as $value){ 
+	print_r($value);
+      if(preg_match('/\s/',$value['nama'])==1){ 
+       $replacedata = preg_replace('/\s+/', '@', $value['nama']); 
+       $kalimat = str_replace($value['nama'],$replacedata,$kalimat);
+      }
+    }
+	
+    $tanda['informasi']=preg_split("/ +/ ",$kalimat);
+	
+    foreach ($tanda['informasi'] as $value) { 
+    $value = str_replace("@"," ",$value);
+    $tanda['newinformasi'][] = $value;
+   }
+		$this->getpos($tanda);
+	//print_r($tanda['newinformasi']);
 	}
 }
+
