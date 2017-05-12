@@ -20,25 +20,19 @@ class Login extends CI_Controller {
 			$data=$this->Model_log->cek($nama,$password);
 			if($data!=null){
 				foreach($data as $data1){
-					$data1=$this->Model_log->cek2($nama);
-					if($data1==null){
+					
 						$this->Model_log->update1($nama);
 						$this->session->set_userdata('username', $nama);
 						print_r($this->session->userdata); 
 						redirect('admin/home');
-					}else{
-						$this->session->set_userdata('login-notif','Maaf ID Anda Sedang Login Di Tempat Lain Silahkan Log Out Terlebih Dahulu');
-						redirect('');
-					}
 				}
+					
 			}
 			else{	
 					$this->session->set_userdata('login-notif','Maaf Username dan Password Salah');
-					redirect('');
-			}
-			
+					redirect('admin/login');
+				}
 		}
-			
 		else{
 			$this->load->view('admin/login');
 		}

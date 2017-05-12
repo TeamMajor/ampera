@@ -38,7 +38,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand page-scroll" href="#page-top" style="color:#b71c1c;">Ampera Answer</a>
+                <a class="navbar-brand page-scroll" href="http://localhost/ampera/" style="color:#b71c1c;">Ampera Answer</a>
             </div>
 
 				<div class="col-lg-6 col-sm-6 col-md-6 col-xs-12" style=" border:0px solid #000000; margin-top:10px;" >
