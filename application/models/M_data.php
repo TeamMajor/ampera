@@ -33,5 +33,14 @@ class M_data extends CI_Model{
 			return array();
 		}
 	}
+	
+	function wisata($where){
+	$hasil=$this->db->query("select * from kebudayaan inner join detail_kebudayaan on kebudayaan.id = detail_kebudayaan.id_kebudayaan where slug='$where' ");
+		if($hasil->num_rows() > 0){
+			return $hasil->result();
+		}else{
+			return array();
+		}
+}
 
 }
