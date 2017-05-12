@@ -99,7 +99,7 @@
                 <ul class="nav">
                     <!-- Main menu -->
                     <li class="<?php if($this->session->userdata('content')=="budaya"){echo "current";}?>"><a href="<?php echo site_url('admin/budaya');?>"><i class="glyphicon glyphicon-home"></i> Data Budaya</a></li>
-                    <li <?php if($this->session->userdata('content')=="readpdf"){echo 'class="current"';}?>><a href="<?php echo site_url('readpdf');	?>"><i class="glyphicon glyphicon-calendar"></i> Profil Admin</a></li>
+                    <li <?php if($this->session->userdata('content')=="add_profile"){echo 'class="current"';}?>><a href="<?php echo site_url('admin/add_profile');	?>"><i class="glyphicon glyphicon-calendar"></i> Profil Admin</a></li>
                     <li><a href="editors.html"><i class="glyphicon glyphicon-pencil"></i> Editors</a></li>
                     <li><a href="forms.html"><i class="glyphicon glyphicon-tasks"></i> Forms</a></li>
                     <li class="submenu">
@@ -119,8 +119,8 @@
 		  <?php if($this->session->userdata('content')=="data budaya"){
 					$this->load->view('budaya.php');
 				}
-				else if($this->session->userdata('content')=='Profil Admin'){
-					$this->load->view('profil.php');
+				else if($this->session->userdata('content')=='add_profile'){
+					$this->load->view('admin/add_profile.php');
 				}
 			
 			?>
