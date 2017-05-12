@@ -5,6 +5,13 @@
 								<div class="page-header">
 									<h3 align="center">Input Data Budaya</h3>
 								</div>
+								<?php if(!empty($this->session->flashdata('message'))){
+									echo '<div class="alert alert-success alert-dismissible" role="alert">
+									<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+									'.$this->session->flashdata('message').'
+								</div>';
+								}
+								?>
 		  						<form enctype="multipart/form-data" id="defaultForm" method="post" class="form-horizontal">
 									<div class="form-group">
 									<label class="col-lg-2 control-label">Nama</label>

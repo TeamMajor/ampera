@@ -98,13 +98,8 @@
 		  	<div class="sidebar content-box" style="display: block;">
                 <ul class="nav">
                     <!-- Main menu -->
-<<<<<<< HEAD
                     <li class="<?php if($this->session->userdata('content')=="home"){echo "current";}?>"><a href="<?php echo site_url('admin/budaya');?>"><i class="glyphicon glyphicon-home"></i> Data Budaya</a></li>
                     <li <?php if($this->session->userdata('content')=="readpdf"){echo 'class="current"';}?>><a href="<?php echo site_url('readpdf');	?>"><i class="glyphicon glyphicon-calendar"></i> Profil Admin</a></li>
-=======
-                    <li class="<?php if($this->session->userdata('content')=="budaya"){echo "current";}?>"><a href="<?php echo site_url('admin/budaya');?>"><i class="glyphicon glyphicon-home"></i> Data Budaya</a></li>
-                    <li <?php if($this->session->userdata('content')=="add_profile"){echo 'class="current"';}?>><a href="<?php echo site_url('admin/add_profile');	?>"><i class="glyphicon glyphicon-calendar"></i> Profil Admin</a></li>
->>>>>>> 1123e291787137983622f5080f3925cce5cb2043
                     <li><a href="editors.html"><i class="glyphicon glyphicon-pencil"></i> Editors</a></li>
                     <li><a href="forms.html"><i class="glyphicon glyphicon-tasks"></i> Forms</a></li>
                     <li class="submenu">
@@ -124,8 +119,8 @@
 		  <?php if($this->session->userdata('content')=="budaya"){
 					$this->load->view('admin/budaya.php');
 				}
-				else if($this->session->userdata('content')=='add_profile'){
-					$this->load->view('admin/add_profile.php');
+				else if($this->session->userdata('content')=='Profil Admin'){
+					$this->load->view('profil.php');
 				}
 			
 			?>
@@ -139,7 +134,7 @@
          <div class="container">
          
             <div class="copy text-center">
-               Copyright 2017 UKMC
+               Copyright 2017 Wahyu
             </div>
             
          </div>

@@ -13,7 +13,7 @@ class Budaya extends CI_Controller {
 		$config['upload_path'] = './file/';
 		$config['allowed_types'] = '*';
 		$this->load->library('upload', $config);
-        
+        $this->load->Model('M_datadmin');
     }
 
 	public function index() {
@@ -31,7 +31,9 @@ class Budaya extends CI_Controller {
 					'name' => $upload_data1['file_name'],
 					'keterangan'=>$keterangan,
 					);
-			$this->Model_stemming->insert_doc($input);
+			$this->M_datadmin->input_data_admin($input,$table);
+			$this->session->set_flashdata('message','data berhasil di kirim');
+			redirect('admin/budaya');
 		}
 			
 		else{
