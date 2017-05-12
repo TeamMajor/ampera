@@ -30,8 +30,63 @@ class Welcome extends CI_Controller {
     $value = str_replace("@"," ",$value);
     $tanda['newinformasi'][] = $value;
    }
-		//$this->getpos($tanda);
-	print_r($tanda['newinformasi']);
+		$this->getpos($tanda);
+	//print_r($tanda['newinformasi']);
 	}
+	
+	public function getpos($tanda){
+	foreach($tanda['newinformasi'] as $value){ //catatan (saya ubah dari $tanda['informasi'] menjadi $tanda['newinformasi'] )
+		$datapos=$this->M_data->getpost($value);
+		if($this->M_data->getpost($value)==null){
+			if($this->M_data->getner($value)==null){
+				
+
+						$tanda['listpos'][]="other";
+				
+			}
+			else{
+				$dataner=$this->M_data->getner($value);
+				$tanda['listpos'][]=$dataner->katergori;
+			}
+
+
+	}
+			else{
+				$tanda['listpos'][]=$datapos->list_pos;
+			}
+
+	}
+		//$value=implode(" ",$tanda['listpos']);
+		//echo $value;
+
+		$this->getanswer($tanda);
+
+
 }
 
+	public function getanswer($tanda){
+		$tanya=array("siapa","apa","kapan","dimana");
+		$katadepan=array_shift($tanda['newinformasi']);
+		$unik=array_unique($tanda['listpos']);
+		//$value=implode(" ",$tanda['listpos']);
+		
+		if($katadepan=="siapa" || $katadepan=="apa" || $katadepan=="kapan" || $katadepan="dimana"){
+				if($katadepan=="apa"){
+					if(end($tanda["newinformasi"])=="palembang"&& in_array("wisata",$tanda['newinformasi'],TRUE) ){
+						$tanda["jawab"]=$this->M_data->getwisata();
+						$this->jawab_wisata($tanda);
+					}
+				}
+		}
+
+		
+	}
+	
+	public function jawab_wisata($tanda){
+			$this->load->view("hasil/tempat-wisata",$tanda);
+	}
+	
+	
+
+
+}
