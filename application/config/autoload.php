@@ -89,7 +89,7 @@ $autoload['drivers'] = array();
 |
 |	$autoload['helper'] = array('url', 'file');
 */
-$autoload['helper'] = array("url","html","file","form","slug");
+$autoload['helper'] = array("url","html","file","form","slug","stemming");
 
 /*
 | -------------------------------------------------------------------
@@ -132,4 +132,4 @@ $autoload['language'] = array();
 |
 |	$autoload['model'] = array('first_model' => 'first');
 */
-$autoload['model'] = array('M_admin','M_data');
+$autoload['model'] = array('M_admin','M_data','Model_stemming');
