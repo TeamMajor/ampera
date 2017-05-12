@@ -98,7 +98,7 @@
 		  	<div class="sidebar content-box" style="display: block;">
                 <ul class="nav">
                     <!-- Main menu -->
-                    <li class="<?php if($this->session->userdata('content')=="budaya"){echo "current";}?>"><a href="<?php echo site_url('admin/budaya');?>"><i class="glyphicon glyphicon-home"></i> Data Budaya</a></li>
+                    <li class="<?php if($this->session->userdata('content')=="home"){echo "current";}?>"><a href="<?php echo site_url('admin/budaya');?>"><i class="glyphicon glyphicon-home"></i> Data Budaya</a></li>
                     <li <?php if($this->session->userdata('content')=="readpdf"){echo 'class="current"';}?>><a href="<?php echo site_url('readpdf');	?>"><i class="glyphicon glyphicon-calendar"></i> Profil Admin</a></li>
                     <li><a href="editors.html"><i class="glyphicon glyphicon-pencil"></i> Editors</a></li>
                     <li><a href="forms.html"><i class="glyphicon glyphicon-tasks"></i> Forms</a></li>
@@ -116,8 +116,8 @@
                 </ul>
              </div>
 		  </div>
-		  <?php if($this->session->userdata('content')=="data budaya"){
-					$this->load->view('budaya.php');
+		  <?php if($this->session->userdata('content')=="budaya"){
+					$this->load->view('admin/budaya.php');
 				}
 				else if($this->session->userdata('content')=='Profil Admin'){
 					$this->load->view('profil.php');

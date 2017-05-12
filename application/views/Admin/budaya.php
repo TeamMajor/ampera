@@ -23,25 +23,24 @@
 										<label class="col-lg-2 control-label">Gambar</label>
 										<div class="col-lg-8">
 											<input type="file" class="form-control" name="pdfFile" />
-											<span class="help-block">Pilih file pdf dengan ukuran kurang dari 5MB.</span>
+											<span class="help-block">Pilih file gambar dengan ukuran kurang dari 5MB.</span>
 										</div>
 									</div>
 									<div class="form-group">
 									<label class="col-lg-2 control-label">Kategori</label>
 										<div class="col-lg-8">
 											<select class="form-control" id="topik" name="topik">
-											<option value="">pilih topik</option>
-											<?php 
-												foreach ($topik as $value){?>
-												<option value="<?php echo $value->id_topik; ?>"><?php echo $value->nama_topik; ?></option>
-											<?php } ?>
-								</select>
+											<option value="">pilih kategori</option>
+											<option value="wisata">Wisata</option>
+											<option value="kuliner">Kuliner</option>
+											<option value="Padat">Pakaian Adat</option>
+											</select>
 										</div>
 									</div>
 									<div class="form-group">
 									<label class="col-lg-2 control-label">Keterangan</label>
 										<div class="col-lg-8">
-											<input type="text" class="form-control" name="judul" />
+											<input type="text" class="form-control" name="keterangan" />
 										</div>
 									</div>
 									<div class="form-group">
@@ -99,6 +98,14 @@ $(document).ready(function() {
                 validators: {
 					notEmpty: {
 					message: 'topik tidak boleh kosong'
+					},
+                  
+                }
+            }
+			keterangan: {
+                validators: {
+					notEmpty: {
+					message: 'keterangan tidak boleh kosong'
 					},
                   
                 }
