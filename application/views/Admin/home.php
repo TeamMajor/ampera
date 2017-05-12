@@ -61,33 +61,6 @@
 	                 <h1><a href="index.html">Admin</a></h1>
 	              </div>
 	           </div>
-	           <div class="col-md-5">
-	              <div class="row">
-	                <div class="col-lg-12">
-	                  <div class="input-group form">
-	                       <input type="text" class="form-control" placeholder="Search...">
-	                       <span class="input-group-btn">
-	                         <button class="btn btn-primary" type="button">Search</button>
-	                       </span>
-	                  </div>
-	                </div>
-	              </div>
-	           </div>
-	           <div class="col-md-2">
-	              <div class="navbar navbar-inverse" role="banner">
-	                  <nav class="collapse navbar-collapse bs-navbar-collapse navbar-right" role="navigation">
-	                    <ul class="nav navbar-nav">
-	                      <li class="dropdown">
-	                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">My Account <b class="caret"></b></a>
-	                        <ul class="dropdown-menu animated fadeInUp">
-	                          <li><a href="profile.html">Profile</a></li>
-	                          <li><a href="login.html">Logout</a></li>
-	                        </ul>
-	                      </li>
-	                    </ul>
-	                  </nav>
-	              </div>
-	           </div>
 	        </div>
 	     </div>
 	</div>
@@ -107,17 +80,15 @@
                          <!-- Sub menu -->
                          <ul>
                               <li <?php if($this->session->userdata('content')=="add_profile"){echo 'class="current"';}?>><a href="<?php echo site_url('admin/add_profile');	?>"><i class="glyphicon glyphicon-calendar"></i> Profil Admin</a></li>
-                            <li><a href="signup.html">Signup</a></li>
+                           
                         </ul>
+						 <li><a href="<?php echo site_url('admin/home/logout');?>"><i class="fa fa-sign-out"></i> Log Out</a></li>
                     </li>
-                    <li><a href="editors.html"><i class="glyphicon glyphicon-pencil"></i> Editors</a></li>
-                    <li><a href="forms.html"><i class="glyphicon glyphicon-tasks"></i> Forms</a></li>
-                   
                 </ul>
              </div>
 		  </div>
-		  <?php if($this->session->userdata('content')=="data budaya"){
-					$this->load->view('budaya.php');
+		  <?php if($this->session->userdata('content')=="budaya"){
+					$this->load->view('admin/budaya');
 				}
 				else if($this->session->userdata('content')=='add_profile'){
 					$this->load->view('admin/add_profile.php');

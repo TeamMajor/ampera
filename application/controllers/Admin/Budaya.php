@@ -8,11 +8,12 @@ class Budaya extends CI_Controller {
 			
 		}
 		else {
-			redirect('admin/home');
+			redirect('admin/login');
 		}
 		$config['upload_path'] = './file/';
 		$config['allowed_types'] = '*';
 		$this->load->library('upload', $config);
+		$this->upload->initialize($config);
         $this->load->Model('M_datadmin');
     }
 
@@ -20,18 +21,24 @@ class Budaya extends CI_Controller {
 		if($this->input->post()){
 			$this->upload->do_upload('pdfFile');
 			$upload_data1 = $this->upload->data();
+			print_r($upload_data1);
 			$nama=$this->input->post('nim');
 			$lokasi=$this->input->post('judul');
 			$kategori=$this->input->post('topik');
 			$keterangan=$this->input->post('keterangan');
 			$input = array (
-					'nama'=>$nim,
+					
 					'lokasi' => $lokasi,
-					'kategori' => $kategori,
-					'name' => $upload_data1['file_name'],
+					'katergori' => $kategori,
+					'gambar' => $upload_data1['file_name'],
 					'keterangan'=>$keterangan,
+					'slug'=>slug($nama,true)
 					);
+			$table='detail_kebudayaan';
 			$this->M_datadmin->input_data_admin($input,$table);
+			$input1=array('nama'=>$nama);
+			$table1='kebudayaan';
+			$this->M_datadmin->input_data_admin($input1,$table1);
 			$this->session->set_flashdata('message','data berhasil di kirim');
 			redirect('admin/budaya');
 		}

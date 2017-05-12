@@ -21,7 +21,7 @@
 	    
 		<div class="col-sm-8 col-sm-offset-2 main">
 		<div class="col-sm-6 left-side">
-		<img src="images/02.jpg" width="100%" />
+		<img src="<?php echo base_url()?>gambar/ampera.png" width="100%" />
 		
 		</div><!--col-sm-6-->
 		
