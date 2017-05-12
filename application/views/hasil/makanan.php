@@ -102,7 +102,7 @@
 			
 				<div class="col-sm-12 col-xs-12 " >
 				<div class="container" style="margin-top:100px;">
-				<h3 style="font-family:'Raleway', sans-serif;"><i class="fa fa-map-marker"></i>&nbsp; Palembang > Tempat Wisata</h3>
+				<h3 style="font-family:'Raleway', sans-serif;"><i class="fa fa-map-marker"></i>&nbsp; Palembang > Makanan</h3>
 				</div>
 				<div class="col-sm-12 col-md-12 col-lg-12 col-xs-12" style="border-bottom:1px solid #e0e0e0 "></div>
 				<div class="container">

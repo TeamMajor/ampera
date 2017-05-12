@@ -26,7 +26,7 @@ class M_data extends CI_Model{
 	}
 	
 	function getwisata(){
-		$hasil= $this->db->query("SELECT * FROM kebudayaan INNER JOIN detail_kebudayaan ON kebudayaan.id=detail_kebudayaan.id_kebudayaan ");
+		$hasil= $this->db->query("SELECT * FROM kebudayaan INNER JOIN detail_kebudayaan ON kebudayaan.id=detail_kebudayaan.id_kebudayaan  where  katergori='tempat wisata'");
 			if($hasil->num_rows() > 0){
 			return $hasil->result();
 		}else{
@@ -35,7 +35,24 @@ class M_data extends CI_Model{
 	}
 	
 	function wisata($where){
-	$hasil=$this->db->query("select * from kebudayaan inner join detail_kebudayaan on kebudayaan.id = detail_kebudayaan.id_kebudayaan where slug='$where' ");
+	$hasil=$this->db->query("select * from kebudayaan inner join detail_kebudayaan on kebudayaan.id = detail_kebudayaan.id_kebudayaan where id='$where' ");
+		if($hasil->num_rows() > 0){
+			return $hasil->result();
+		}else{
+			return array();
+		}
+	}
+		function getmakanan(){
+	$hasil=$this->db->query("select * from kebudayaan inner join detail_kebudayaan on kebudayaan.id = detail_kebudayaan.id_kebudayaan where katergori='wisata kuliner' ");
+		if($hasil->num_rows() > 0){
+			return $hasil->result();
+		}else{
+			return array();
+		}
+		}
+		
+		function getpakaian(){
+	$hasil=$this->db->query("select * from kebudayaan inner join detail_kebudayaan on kebudayaan.id = detail_kebudayaan.id_kebudayaan where katergori='Pakaian' ");
 		if($hasil->num_rows() > 0){
 			return $hasil->result();
 		}else{

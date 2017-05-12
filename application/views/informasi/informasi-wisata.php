@@ -114,7 +114,7 @@
 	<?php foreach($wisata as $b) { ?>
     <section id="intro" class="intro-section" style="margin-top:10px;">
 			<div class="col-sm-12 col-md-12 col-xs-12" >
-				<img class="col-sm-12 col-md-12 col-xs-12 col-lg-12" src="http://localhost/ampera/gambar/<?php echo $b->gambar ?>" />
+				<img class="col-sm-12 col-md-12 col-xs-12 col-lg-12" src="http://localhost/ampera/file/<?php echo $b->gambar ?>" />
 			
 			</div>
     </section>
@@ -153,16 +153,7 @@
 				
     </section>
 
-     <div class="footer" style="background:#f5f5f5;">
-			<div class="container" style="background:#f5f5f5; padding-top:25px;">
-					<?php echo anchor("cari/tentang-kami","Tentang Kami",array("style"=>"color:#757575;")) ?>
-					<?php echo anchor("cari/bantuan","Bantuan",array("style"=>"color:#757575; margin-left:20px; ")) ?>
-					<div class="pull-right" style="color:#9e9e9e; text-align:right;">
-						Ampera Answer @2017
-					</div>
-			</div>
-
-</div>
+    
 	
 
     <!-- jQuery -->

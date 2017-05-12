@@ -75,7 +75,14 @@ class Welcome extends CI_Controller {
 					if(end($tanda["newinformasi"])=="palembang"&& in_array("wisata",$tanda['newinformasi'],TRUE) ){
 						$tanda["jawab"]=$this->M_data->getwisata();
 						$this->jawab_wisata($tanda);
+					}else if(end($tanda["newinformasi"])=="palembang" && in_array("makanan",$tanda['newinformasi'],TRUE) || in_array("kuliner",$tanda['newinformasi'],TRUE) ){
+						$tanda["jawab"]=$this->M_data->getmakanan();
+						$this->jawab_makanan($tanda);
+					}else if(end($tanda["newinformasi"])=="palembang"  && in_array("pakaian",$tanda['newinformasi'],TRUE) && in_array("adat",$tanda['newinformasi'],TRUE ) || in_array("daerah",$tanda['newinformasi'],TRUE) {
+						$tanda["jawab"]=$this->M_data->getpakaian();
+						$this->jawab_pakaian($tanda);
 					}
+					
 				}
 		}
 
@@ -86,6 +93,9 @@ class Welcome extends CI_Controller {
 			$this->load->view("hasil/tempat-wisata",$tanda);
 	}
 	
+	public function jawab_makanan($tanda){
+		$this->load->view("hasil/makanan",$tanda);
+	}
 	
 
 
