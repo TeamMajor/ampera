@@ -73,15 +73,12 @@
                     <!-- Main menu -->
                     <li class="<?php if($this->session->userdata('content')=="budaya"){echo "current";}?>"><a href="<?php echo site_url('admin/budaya');?>"><i class="glyphicon glyphicon-home"></i> Data Budaya</a></li>
 					 <li class="submenu">
-                         <a href="#">
-                            <i class="glyphicon glyphicon-list"></i> Data Admin
-                            <span class="caret pull-right"></span>
-                         </a>
+                        
                          <!-- Sub menu -->
-                         <ul>
-                              <li <?php if($this->session->userdata('content')=="add_profile"){echo 'class="current"';}?>><a href="<?php echo site_url('admin/add_profile');	?>"><i class="glyphicon glyphicon-calendar"></i> Profil Admin</a></li>
+                         
+                        
                            
-                        </ul>
+                        <li <?php if($this->session->userdata('content')=="add_profile"){echo 'class="current"';}?>><a href="<?php echo site_url('admin/add_profile');	?>"><i class="glyphicon glyphicon-calendar"></i> Profil Admin</a></li>
 						 <li><a href="<?php echo site_url('admin/home/logout');?>"><i class="fa fa-sign-out"></i> Log Out</a></li>
                     </li>
                 </ul>
