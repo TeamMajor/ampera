@@ -60,4 +60,14 @@ class M_data extends CI_Model{
 		}
 }
 
+		function getlokasi($data){
+		$hasil=$this->db->query("select * from kebudayaan inner join detail_kebudayaan on kebudayaan.id = detail_kebudayaan.id_kebudayaan where nama='$data' ");
+		if($hasil->num_rows() > 0){
+			return $hasil->result();
+		}else{
+			return array();
+		}
+   }
+
+
 }

@@ -78,11 +78,17 @@ class Welcome extends CI_Controller {
 					}else if(end($tanda["newinformasi"])=="palembang" && in_array("makanan",$tanda['newinformasi'],TRUE) || in_array("kuliner",$tanda['newinformasi'],TRUE) ){
 						$tanda["jawab"]=$this->M_data->getmakanan();
 						$this->jawab_makanan($tanda);
-					}else if(end($tanda["newinformasi"])=="palembang"  && in_array("pakaian",$tanda['newinformasi'],TRUE) && in_array("adat",$tanda['newinformasi'],TRUE ) || in_array("daerah",$tanda['newinformasi'],TRUE) {
+					}else if(end($tanda["newinformasi"])=="palembang"  && in_array("pakaian",$tanda['newinformasi'],TRUE) && in_array("adat",$tanda['newinformasi'],TRUE ) || in_array("daerah",$tanda['newinformasi'],TRUE) ) {
 						$tanda["jawab"]=$this->M_data->getpakaian();
 						$this->jawab_pakaian($tanda);
 					}
 					
+				}else if ($katadepan=="dimana"){
+					if(in_array("lokasi",$tanda['newinformasi'],TRUE) && in_array("tempat wisata",$tanda['listpos'],TRUE) ){
+						
+						$tanda["jawab"]=$this->M_data->getlokasi($data);
+						$this->jawab_lokasi($tanda);
+					}
 				}
 		}
 
@@ -96,7 +102,13 @@ class Welcome extends CI_Controller {
 	public function jawab_makanan($tanda){
 		$this->load->view("hasil/makanan",$tanda);
 	}
+	public function jawab_pakaian($tanda){
+		$this->load->view("hasil/pakaian",$tanda);
+	}
 	
+	public function jawab_lokasi ($tanda){
+		$this->load->view("hasil/lokasi",$tanda);
+	}
 
 
 }

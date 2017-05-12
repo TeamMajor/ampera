@@ -114,7 +114,7 @@
 	<?php foreach($wisata as $b) { ?>
     <section id="intro" class="intro-section" style="margin-top:10px;">
 			<div class="col-sm-12 col-md-12 col-xs-12" >
-				<img class="col-sm-12 col-md-12 col-xs-12 col-lg-12" src="http://localhost/ampera/file/<?php echo $b->gambar ?>" />
+				<img class="col-sm-12 col-md-12 col-xs-12 col-lg-12" src="http://localhost/ampera/file/<?php echo $b->gambar ?>" class="img img-responsive" />
 			
 			</div>
     </section>
